@@ -2,5 +2,5 @@
 
 docker build \
     --build-arg DEBIAN_VERSION=stable-slim \
-    --file $DOCKERFILE_PATH \
-    --tag $IMAGE_NAME:$DOCKER_TAG .
+    --file $DOCKERFILE_PATH . \
+    --tag $IMAGE_NAME
