@@ -2,6 +2,6 @@
 
 docker build \
     --no-cache \
-    --build-arg DEBIAN_VERSION=stable-slim \
+    --build-arg DEBIAN_VERSION=sid \
     --file $DOCKERFILE_PATH \
     --tag $IMAGE_NAME .
