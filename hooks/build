@@ -1,7 +1,13 @@
 #!/bin/bash
 
-docker build \
-    --no-cache \
-    --build-arg DEBIAN_VERSION=sid \
-    --file $DOCKERFILE_PATH \
-    --tag $IMAGE_NAME .
+if [ $DOCKERFILE_PATH == "Dockerfile" ]
+then
+    docker build --no-cache --build-arg DEBIAN_VERSION=sid --file $DOCKERFILE_PATH --tag $IMAGE_NAME .
+else
+    docker build --no-cache --build-arg IMAGE_VERSION=latest --file $DOCKERFILE_PATH --tag $IMAGE_NAME .
+fi
+#docker build \
+#    --no-cache \
+#    --build-arg DEBIAN_VERSION=sid \
+#    --file $DOCKERFILE_PATH \
+#    --tag $IMAGE_NAME .
